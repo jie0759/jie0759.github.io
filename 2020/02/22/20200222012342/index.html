@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>關於Apaache的虛擬主機的搭建 | 布布的博客</title>
+  <title>20200222012342 | 布布的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="哎，弄這個弄了很久了。終於是弄完了。一、修改端口号打开apache中httpd.conf和httpd-vhosts.conf文件：然后，在httpd-vhosts.conf中添加如下配置信息，用于配置你自定义的端口号以及其指向的项目地址：&lt;VirtualHost *:8888&gt;    ServerAdmin webmaster@dummy-host2.example.com    Do">
+  <meta name="description" content="一路走來吃了好多虧，沒人跟我講。其實文件不用自己配置，可以直接下載個軟件直接合成。真的好煩呀。浪費了三天的時間">
 <meta property="og:type" content="article">
-<meta property="og:title" content="關於Apaache的虛擬主機的搭建">
-<meta property="og:url" content="http://yoursite.com/2020/02/20/%E9%97%9C%E6%96%BCApaache%E7%9A%84%E8%99%9B%E6%93%AC%E4%B8%BB%E6%A9%9F%E7%9A%84%E6%90%AD%E5%BB%BA/index.html">
+<meta property="og:title" content="20200222012342">
+<meta property="og:url" content="http://yoursite.com/2020/02/22/20200222012342/index.html">
 <meta property="og:site_name" content="布布的博客">
-<meta property="og:description" content="哎，弄這個弄了很久了。終於是弄完了。一、修改端口号打开apache中httpd.conf和httpd-vhosts.conf文件：然后，在httpd-vhosts.conf中添加如下配置信息，用于配置你自定义的端口号以及其指向的项目地址：&lt;VirtualHost *:8888&gt;    ServerAdmin webmaster@dummy-host2.example.com    Do">
+<meta property="og:description" content="一路走來吃了好多虧，沒人跟我講。其實文件不用自己配置，可以直接下載個軟件直接合成。真的好煩呀。浪費了三天的時間">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-02-20T13:40:48.000Z">
-<meta property="article:modified_time" content="2020-02-20T13:49:02.102Z">
+<meta property="article:published_time" content="2020-02-21T17:23:42.000Z">
+<meta property="article:modified_time" content="2020-02-21T17:33:52.206Z">
 <meta property="article:author" content="pupu布布">
 <meta name="twitter:card" content="summary">
   
@@ -142,14 +142,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-關於Apaache的虛擬主機的搭建" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-20200222012342" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      關於Apaache的虛擬主機的搭建
+      20200222012342
     </h1>
   
 
@@ -164,36 +164,15 @@
 
 
 
-<a href="/2020/02/20/%E9%97%9C%E6%96%BCApaache%E7%9A%84%E8%99%9B%E6%93%AC%E4%B8%BB%E6%A9%9F%E7%9A%84%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2020-02-20T13:40:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-20</time>
+<a href="/2020/02/22/20200222012342/" class="archive-article-date">
+  	<time datetime="2020-02-21T17:23:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>哎，弄這個弄了很久了。終於是弄完了。<br>一、修改端口号<br>打开apache中httpd.conf和httpd-vhosts.conf文件：<br>然后，在httpd-vhosts.conf中添加如下配置信息，用于配置你自定义的端口号以及其指向的项目地址：<br>&lt;VirtualHost *:8888&gt;<br>    ServerAdmin <a href="mailto:webmaster@dummy-host2.example.com">webmaster@dummy-host2.example.com</a><br>    DocumentRoot “D:/PHP”<br>    ServerName localhost<br>    ErrorLog “logs/dummy-host2.example.com-error.log”<br>    CustomLog “logs/dummy-host2.example.com-access.log” common<br></p>
-<p>接着，进入httpd.conf文件中，大概60多行的位置，加上一句话<code>Listen 8888</code>,即你刚刚自定义的端口号。<br>然后，开启apache的重写模式，把<code>AllowOverride None</code>的地方，全改为<code>AllowOverride All</code>，<code>LoadModule rewrite_module modules/mod_rewrite.so</code>这句话前面的#号去掉。<br>大概500行左右<code>Include conf/extra/httpd-vhosts.conf</code>这句话注释打开（去掉前面的#号）<br>最后注意一下，这里可根据自己需求进行修改默认访问文件。</p>
-<p>最后，重启apache(<em>每次修改它的配置文件，都需重启apache</em>),浏览器输入localhost:8888即可访问到你自定义的文件目录。<br>二、配置域名<br>还是首先打开httpd-vhosts.conf文件，添加如下配置：<br>&lt;VirtualHost *:80&gt;<br>    ServerAdmin <a href="mailto:webmaster@dummy-host2.example.com">webmaster@dummy-host2.example.com</a><br>    DocumentRoot “D:/PHP/stores/public”          //自定义访问的根目录<br>    ServerName ztt.store.com                     //自定义访问的域名<br>    ErrorLog “logs/dummy-host2.example.com-error.log”<br>    CustomLog “logs/dummy-host2.example.com-access.log” common<br></p>
-<p>打开httpd.conf.启用apache的虚拟主机功能，去掉前面的#号，LoadModule vhost_alias_module modules/mod_vhost_alias.so</p>
-<p>Include conf/extra/httpd-vhosts.conf这句话注释打开（去掉前面的#号）。</p>
-<p>打开C:\Windows\System32\drivers\etc下的hosts文件，添加如下命令：127.0.0.1       ztt.store.com。</p>
-<p>(记得最后重启apache)打开浏览器，访问ztt.store.com（你自定义的域名）即可</p>
-<p>在Apache配置文件中设置相应的权限</p>
-<Directory>
-
-<pre><code>Options FollowSymLinks
-
-AllowOverride None
-
-Order deny,allow
-
-allow from all</code></pre></Directory>
-
-
-
-
-
+        <p>一路走來吃了好多虧，沒人跟我講。其實文件不用自己配置，可以直接下載個軟件直接合成。真的好煩呀。浪費了三天的時間</p>
 
       
 
@@ -225,6 +204,17 @@ allow from all</code></pre></Directory>
       
 	  
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/感慨//" class="article-tag-list-link color3">感慨</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -274,7 +264,7 @@ allow from all</code></pre></Directory>
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/20/%E9%97%9C%E6%96%BCApaache%E7%9A%84%E8%99%9B%E6%93%AC%E4%B8%BB%E6%A9%9F%E7%9A%84%E6%90%AD%E5%BB%BA/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/22/20200222012342/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -288,18 +278,9 @@ allow from all</code></pre></Directory>
   
 <nav id="article-nav">
   
-    <a href="/2020/02/22/20200222012342/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          20200222012342
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/01/14/%E9%99%84/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">附</div>
+    <a href="/2020/02/20/%E9%97%9C%E6%96%BCApaache%E7%9A%84%E8%99%9B%E6%93%AC%E4%B8%BB%E6%A9%9F%E7%9A%84%E6%90%AD%E5%BB%BA/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">關於Apaache的虛擬主機的搭建</div>
       <i class="icon-circle-right"></i>
     </a>
   
